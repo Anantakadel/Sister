@@ -1,76 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Typewriter Effect</title>
-    <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
     <style>
-      body {
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        /* Adding background image */
-        background-image: url('2.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column; /* To align content vertically */
-        text-align: center; /* To center the heading */
-      }
-      h1 {
-        font-size: 40px;
-        color: white;
-        font-family: "Cutive Mono";
-        margin-bottom: 20px; /* Adjust spacing as needed */
-      }
-      .type {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .type span {
-        font-size: 24px;
-        color: white;
-        font-family: "Cutive Mono";
-        border-right: 1mm solid white;
-        letter-spacing: 1px;
-        animation: typing 53.5s steps(100, end), blink 1s step-end infinite;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      @keyframes typing {
-        from {
-          width: 0;
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            text-align: center;
+            padding: 50px;
         }
-        to {
-          width: 100%;
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
         }
-      }
-      @keyframes blink {
-        0%,
-        100% {
-          border-color: transparent;
+
+        h1 {
+            color: #ff5f6d;
         }
-        50% {
-          border-color: white;
+
+        .message {
+            font-size: 1.2em;
+            margin: 20px 0;
         }
-      }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            margin: 20px auto;
+        }
+
+        .cake-top {
+            background: #ffcccb;
+            width: 100%;
+            height: 60px;
+            border-radius: 100px 100px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .cake-base {
+            background: #f8b400;
+            width: 100%;
+            height: 90px;
+            border-radius: 0 0 100px 100px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .candle {
+            background: #f1c40f;
+            width: 15px;
+            height: 40px;
+            position: absolute;
+            top: -40px;
+        }
+
+        #candle1 { left: 40px; }
+        #candle2 { left: 90px; }
+        #candle3 { left: 140px; }
+
+        button {
+            background: #ff5f6d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #ff7b8c;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #specialMessage {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Dear Sister❤️</h1>
-    <div class="type">
-      <span>I have always been able to turn to you in a bad mood and have a smile on my face. Having you as a sister makes life worthwhile. Thank you for being there for me</span>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday, [Sister's Name]!</h1>
+        <p class="message">Wishing you a day filled with love, joy, and lots of cake!</p>
+        <div class="cake">
+            <div class="candle" id="candle1"></div>
+            <div class="candle" id="candle2"></div>
+            <div class="candle" id="candle3"></div>
+            <div class="cake-top"></div>
+            <div class="cake-base"></div>
+        </div>
+        <button onclick="showMessage()">Click for a Special Message</button>
+        <div id="specialMessage" class="hidden">
+            <p>You are the best sister ever! Enjoy your special day!</p>
+        </div>
     </div>
-  </body>
+    <script>
+        function showMessage() {
+            const messageElement = document.getElementById('specialMessage');
+            if (messageElement.classList.contains('hidden')) {
+                messageElement.classList.remove('hidden');
+            } else {
+                messageElement.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
 </html>
